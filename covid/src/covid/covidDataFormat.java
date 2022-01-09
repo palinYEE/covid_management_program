@@ -6,6 +6,7 @@ public class covidDataFormat {
 	private int age;
 	private String area;
 	private String vaccine;
+	private int dataCount;
 	
 	public String getName() {
 		return name;
@@ -30,6 +31,12 @@ public class covidDataFormat {
 	}
 	public void setVaccine(String vaccine) {
 		this.vaccine = vaccine;
+	}
+	public int getDataCount() {
+		return dataCount;
+	}
+	public void setDataCount(int dataCount) {
+		this.dataCount = dataCount;
 	}
 	
 	

@@ -65,6 +65,32 @@ public class covidDatabaseHandling {
 		}
 	}
 	
+	public int countData(String fileName) {
+		int count = 0;
+		boolean isExists = file.exists();
+		try {
+			if(!isExists) {
+				util.printError("Not exists file !!");
+			}
+			else {
+				file.createNewFile();
+				FileOutputStream fos = new FileOutputStream(file);
+				
+				// 엑셀파일 객체 생성 
+				HSSFWorkbook workbook = new HSSFWorkbook();
+				// 엑셀파일의 시트 생성 
+				HSSFSheet sheet = workbook.getSheet("user");
+				
+				count = sheet.getPhysicalNumberOfRows();
+
+				fos.close();
+			}
+		} catch(IOException ex) {
+			ex.getMessage();
+		}
+		return count;
+	}
+	
 	public void inputData(int row, covidDataFormat data) {
 		boolean isExists = file.exists();
 		try {

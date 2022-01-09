@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class covidUser {
 	
 	static covidUtils util = new covidUtils();
+	covidDataFormat userData = new covidDataFormat();
+	covidDatabaseHandling data = new covidDatabaseHandling("test");
 	
 	public covidUser() {
 		super();
@@ -23,7 +25,34 @@ public class covidUser {
 	}
 	// 백신 예약 함수 
 	public void resolVaccine() {
-		covidDatabaseHandling data = new covidDatabaseHandling("test");
+		String name;
+		int age;
+		String area;
+		String vaccine;
+		int countData;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.printf("\t - Input booker name :  ");
+		name = sc.nextLine();
+		System.out.printf("\t - Input booker age : ");
+		age = sc.nextInt();
+		System.out.printf("\t - Input resolvation area : ");
+		area = sc.nextLine();
+		System.out.printf("\t - Input resolvation vaccine : ");
+		vaccine = sc.nextLine();
+		
+		userData.setName(name);
+		userData.setAge(age);
+		userData.setArea(area);
+		userData.setVaccine(vaccine);
+		
+		countData = data.countData("test");
+		
+		data.inputData(countData, userData);
+		
+		System.out.println("\t\tData count : " + countData);
 	}
 	
 	public void menu() {
