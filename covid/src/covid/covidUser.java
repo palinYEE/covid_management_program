@@ -55,6 +55,26 @@ public class covidUser {
 		System.out.println("\t\tData count : " + countData);
 	}
 	
+	// 백신 예약 취소 함수
+	public void cancellationVaccine(){
+		
+		Scanner sc = new Scanner(System.in);
+
+		String name;
+		int age;
+
+		System.out.printf("Please input name to cancel : ");
+		name = sc.nextLine();
+		System.out.printf("Please input age to cancel : ");
+		age = sc.nextInt();
+		
+	}
+	
+	// 백신 예약 현황 보여주는 함수
+	public void checkReservation(){
+
+	}
+
 	public void menu() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -70,8 +90,10 @@ public class covidUser {
 				resolVaccine();
 				break;
 			case 2:
+				cancellationVaccine();
 				break;
 			case 3:
+				checkReservation();
 				break;
 			case 4:
 				util.printExit();
