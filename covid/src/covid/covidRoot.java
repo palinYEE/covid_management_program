@@ -121,6 +121,16 @@ public class covidRoot {
 		
 	}
 	
+	// 예약 현황 확인 함수
+	public void checkReservation(){
+
+	}
+
+	// 예약 지역 추가 함수
+	public void addReservatioArea(){
+
+	}
+
 	public void menu() {
 		this.loginStatus = false;
 		Scanner sc = new Scanner(System.in);
@@ -136,8 +146,10 @@ public class covidRoot {
 				modifyAdmin();
 				break;
 			case 2:
+				checkReservation();
 				break;
 			case 3:
+				addReservatioArea();
 				break;
 			case 4:
 				util.printExit();
