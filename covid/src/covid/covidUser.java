@@ -10,7 +10,7 @@ public class covidUser {
 		super();
 	}
 	
-	public static void printMenu() {
+	public void printMenu() {
 		util.clrscr();
 		util.mainDisplay("USER");
 		
@@ -21,8 +21,12 @@ public class covidUser {
 		
 		System.out.printf("[*] Select menu : ");
 	}
+	// 백신 예약 함수 
+	public void resolVaccine() {
+		covidDatabaseHandling data = new covidDatabaseHandling("test");
+	}
 	
-	public static void menu() {
+	public void menu() {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -34,6 +38,7 @@ public class covidUser {
 			
 			switch(select) {
 			case 1:
+				resolVaccine();
 				break;
 			case 2:
 				break;

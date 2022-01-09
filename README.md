@@ -52,3 +52,14 @@
 
  - 데이터베이스 연동은 엑셀 파일로 한다. 
  - 엑셀 파일을 읽고 쓰는 행위로 데이터를 저장한다.
+
+# ISSUE
+
+## 엑셀 입출력에서 나는 에러
+
+* 에러 문구
+```
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+```
+
+
