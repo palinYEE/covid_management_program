@@ -27,6 +27,10 @@ public class covidDatabaseHandling {
 	File file;
 	covidUtils util = new covidUtils();
 	
+	public covidDatabaseHandling() {
+		super();
+	}
+	
 	public covidDatabaseHandling(String fileName){
 		this.filePath = "/Users/yoon-yeoungjin/Desktop/git_repository/covid_management_program/data/" + fileName + ".xls";
 		this.file = new File(filePath);
@@ -81,6 +85,10 @@ public class covidDatabaseHandling {
 				// 엑셀파일의 시트 생성 
 				HSSFSheet sheet = workbook.getSheet("user");
 				
+				if(sheet == null) {
+					util.printError("sheet value is null !!");
+					return 0;
+				}
 				count = sheet.getPhysicalNumberOfRows();
 
 				fos.close();
@@ -99,16 +107,16 @@ public class covidDatabaseHandling {
 				util.printError("Not exists file !!");
 			}
 			else {
-				file.createNewFile();
+//				file.createNewFile();
 				FileOutputStream fos = new FileOutputStream(file);
 				
 				// 엑셀파일 객체 생성 
 				HSSFWorkbook workbook = new HSSFWorkbook();
 				// 엑셀파일의 시트 생성 
-				HSSFSheet sheet = workbook.createSheet("user");
+//				HSSFSheet sheet = workbook.createSheet("user");
 				
 				// 시트의 행 생성 
-				Row headerRow = sheet.createRow(row);
+				Row headerRow = sheet.createRow(row + 1);
 				
 				// 시트의 열 생성
 				Cell cell1 = headerRow.createCell(0);
