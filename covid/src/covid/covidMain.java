@@ -36,10 +36,9 @@ public class covidMain {
 			default:
 				util.printError("You input wrong value !!");
 				break;
+
 			}
 		}
-
-		
 	}
 
 }

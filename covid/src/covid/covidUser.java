@@ -38,6 +38,9 @@ public class covidUser {
 		name = sc.nextLine();
 		System.out.printf("\t - Input booker age : ");
 		age = sc.nextInt();
+		
+		sc.nextLine();		/* 개행문자를 제거하기 위해 추가 */
+		
 		System.out.printf("\t - Input resolvation area : ");
 		area = sc.nextLine();
 		System.out.printf("\t - Input resolvation vaccine : ");
