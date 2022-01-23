@@ -113,7 +113,12 @@ public class covidDatabaseHandling {
 				// 엑셀파일 객체 생성 
 				HSSFWorkbook workbook = new HSSFWorkbook();
 				// 엑셀파일의 시트 생성 
-//				HSSFSheet sheet = workbook.createSheet("user");
+				HSSFSheet sheet = workbook.getSheet("user");
+				
+				if(sheet == null) {
+					util.printError(" function: inputData, Content: sheet value is null !!");
+					return;
+				}
 				
 				// 시트의 행 생성 
 				Row headerRow = sheet.createRow(row + 1);
